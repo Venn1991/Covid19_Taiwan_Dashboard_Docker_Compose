@@ -1,0 +1,13 @@
+<!-- This is the template for feedback submit form -->
+<form class = 'form-group' id="feedback_form"  action="submit" method='post'>
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-group col-auto">
+          {{ field.label_tag }}
+          {{ field }}
+          {{ field.errors }}
+        </div>
+      {% endfor %}                      
+        <input type="submit" id='feedback_submit_btn' class="btn btn-primary" value="Send Feedback"/>
+        </div>
+</form>
